@@ -44,6 +44,6 @@ jobs:
         if: env.PAT
         with:
           source_repo: "https://github.com/Oreomeow/QuanX.git"
-          source_branch: "main"
+          source_branch: "master"
           destination_branch: "Oreomeow"
           github_token: ${{ secrets.PAT }}
