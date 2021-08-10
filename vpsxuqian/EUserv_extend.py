@@ -23,8 +23,8 @@ COOL_PUSH_MODE = os.environ.get('COOL_PUSH_MODE')
 PUSH_PLUS_TOKEN = os.environ.get('PUSH_PLUS_TOKEN')
 
 # Telegram Bot Push https://core.telegram.org/bots/api#authorizing-your-bot
-TG_BOT_TOKEN = os.environ.get('TG_BOT_TOKEN')  # 通过 @BotFather 申请获得，示例：1077xxx4424:AAFjv0FcqxxxxxxgEMGfi22B4yh15R5uw
-TG_USER_ID = os.environ.get('TG_USER_ID')  # 用户、群组或频道 ID，示例：129xxx206
+TG_BOT_TOKEN = os.environ.get('1453570622:AAFte8nx0zof2C3rUgJ9QwKjUDGxyukhr0o')  # 通过 @BotFather 申请获得，示例：1077xxx4424:AAFjv0FcqxxxxxxgEMGfi22B4yh15R5uw
+TG_USER_ID = os.environ.get('568774799')  # 用户、群组或频道 ID，示例：129xxx206
 TG_API_HOST = os.environ.get('TG_API_HOST', 'api.telegram.org')  # 自建 API 反代地址，供网络环境无法访问时使用，网络正常则保持默认
 
 # wecomchan https://github.com/easychen/wecomchan
