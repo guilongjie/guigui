@@ -1,33 +1,29 @@
 // @grant nodejs
-console.log("⏳ 初始化安装依赖中......")
-$exec('wget https://raw.githubusercontent.com/Oreomeow/freenom-py/main/requirements.txt -O requirements.txt && pip3 install -r requirements.txt', {
+console.log("⏳ 初始化安装推送模块中......")
+$exec('wget https://raw.githubusercontent.com/whyour/qinglong/master/sample/notify.py -O notify.py', {
   cwd: './script/Shell',
   timeout: 0,
   cb(data, error) {
     error ? console.error(error) : console.log(data)
   }
 })
-console.log("⏳ 开始拉取 git 仓库 Oreomeow/freenom-py")
-$exec('git clone https://github.com/Oreomeow/freenom-py.git', {
+// 通知填写参考 https://raw.githubusercontent.com/whyour/qinglong/master/sample/config.sample.sh
+console.log("⏳ 开始执行 FNplus.py")
+$exec('python3 https://raw.githubusercontent.com/Oreomeow/freenom-py/main/FNplus.py', {
   cwd: './script/Shell',
-  timeout: 0,
-  cb(data, error) {
-    error ? console.error(error) : console.log(data)
-  }
-})
-console.log("⏳ 开始执行 FN_extend.py")
-$exec('python3 FN_extend.py', {
-  cwd: './script/Shell/freenom-py',
   timeout: 0,
   env: {
-    FN_ID: $store.get('FN_ID', 'string'),
-    FN_PW: $store.get('FN_PW', 'string'),
-    MAIL_USER: $store.get('MAIL_USER', 'string'),
-    MAIL_ADDRESS: $store.get('MAIL_ADDRESS', 'string'),
-    MAIL_PW: $store.get('MAIL_PW', 'string'),
-    MAIL_HOST: $store.get('MAIL_HOST', 'string'),
-    MAIL_PORT: $store.get('MAIL_PORT', 'string'),
-    MAIL_TO: $store.get('MAIL_TO', 'string'),
+    FN_ID: $store.get('FN_ID', 'string'),                                     // Freenom 用户名
+    FN_PW: $store.get('FN_PW', 'string'),                                     // Freenom 密码
+    BARK: $store.get('BARK', 'string'),                                       // bark服务,此参数如果以http或者https开头则判定为自建bark服务; secrets可填;
+    SCKEY: $store.get('SCKEY', 'string'),                                     // Server酱的SCKEY; secrets可填
+    TG_BOT_TOKEN: $store.get('TG_BOT_TOKEN', 'string'),                       // tg机器人的TG_BOT_TOKEN; secrets可填
+    TG_USER_ID: $store.get('TG_USER_ID', 'string'),                           // tg机器人的TG_USER_ID; secrets可填
+    TG_PROXY_IP: $store.get('TG_PROXY_IP', 'string'),                         // tg机器人的TG_PROXY_IP; secrets可填
+    TG_PROXY_PORT: $store.get('TG_PROXY_PORT', 'string'),                     // tg机器人的TG_PROXY_PORT; secrets可填
+    DD_BOT_ACCESS_TOKEN: $store.get('DD_BOT_ACCESS_TOKEN', 'string'),         // 钉钉机器人的DD_BOT_ACCESS_TOKEN; secrets可填
+    DD_BOT_SECRET: $store.get('DD_BOT_SECRET', 'string'),                     // 钉钉机器人的DD_BOT_SECRET; secrets可填
+    QYWX_APP: $store.get('QYWX_APP', 'string')                                // 企业微信应用的QYWX_APP; secrets可填 参考http://note.youdao.com/s/HMiudGkb
   },
   cb(data, error) {
     error ? console.error(error) : console.log(data)
