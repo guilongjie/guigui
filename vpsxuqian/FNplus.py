@@ -4,7 +4,7 @@ Cron: 25 7 */10 * *  main_FNplus.py
 import os,re,requests,argparse
 
 # 登录地址
-LOGIN_URL = 'https://my.freenom.com/clientarea.php'
+LOGIN_URL = 'https://my.freenom.com/dologin.php'
 
 # 域名状态地址
 DOMAIN_STATUS_URL = 'https://my.freenom.com/domains.php?a=renewals'
