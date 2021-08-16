@@ -1,6 +1,6 @@
 // @grant nodejs
 console.log("⏳ 初始化安装推送模块中......")
-$exec('wget https://raw.githubusercontent.com/guilongjie/guigui/main/vpsxuqian/FNplus.py', {
+$exec('wget https://raw.githubusercontent.com/guilongjie/guigui/main/vpsxuqian/notify.py -O notify.py', {
   cwd: './script/Shell',
   timeout: 0,
   cb(data, error) {
